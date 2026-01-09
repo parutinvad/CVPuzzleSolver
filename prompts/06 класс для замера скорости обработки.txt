@@ -1,0 +1,15 @@
+реализуй кросс-платформенно (linux, macos, windows) и с высокой точностью замера времени этот header:
+
+#pragma once
+
+class Timer {
+public:
+    // constructor starts timer's measurements
+    Timer() {}
+
+    // returns passed time (in seconds)
+    double elapsed();
+
+    // resets timer's measurements
+    double reset();
+};
