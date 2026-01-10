@@ -40,6 +40,3 @@ extern template class Color<float>;
 
 using color8u = Color<std::uint8_t>;
 using color32f = Color<float>;
-
-// Runtime color: can be grayscale/RGB and uint8/float.
-using color = std::variant<color8u, color32f>;

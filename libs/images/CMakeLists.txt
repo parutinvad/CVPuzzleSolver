@@ -2,6 +2,7 @@ add_library(libimages STATIC
         libimages/algorithms/extract_contour.cpp
         libimages/algorithms/grayscale.cpp
         libimages/algorithms/morphology.cpp
+        libimages/algorithms/simplify_contours.cpp
         libimages/algorithms/split_into_parts.cpp
         libimages/algorithms/threshold_masking.cpp
         libimages/color.cpp
@@ -22,6 +23,7 @@ if (BUILD_TESTING)
             libimages/algorithms/extract_contour_tests.cpp
             libimages/algorithms/grayscale_tests.cpp
             libimages/algorithms/morphology_tests.cpp
+            libimages/algorithms/simplify_contours_tests.cpp
             libimages/algorithms/split_into_parts_tests.cpp
             libimages/algorithms/threshold_masking_tests.cpp
             libimages/debug_io_tests.cpp

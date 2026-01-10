@@ -1,0 +1,24 @@
+реализуй simplify_contours.cpp и simplify_contours_tests.cpp
+
+simplifyContour должен работать в цикле до тех пока вершин больше чем целевое количество
+каждый раз он среди всех оставшихся вершин находит метрику "насколько удаление этой вершины навредит"
+то есть насколько эта вершина далеко находится от прямой проведенной через предыдущую и следующую вершины в контуре
+иначе говоря мы хотим удалять в первую очередь такие вершины, что они лежат на гладкой прямой стороне,
+а значит эта вершина и соседние с ней - лежат на одной прямой
+тогда в конечном итоге останутся вершины на углах
+
+splitContourByCorners должен найти индексы на которых в изначальном контуре находятся угловые вершины
+после этого вернуть куски контура - подряд идущие пиксели каждоый из сторон
+то есть угловые вершины-пиксели должны разбить контур на части - на стороны
+
+вот simplify_contours.h:
+
+#pragma once
+
+#include <libbase/point2.h>
+
+#include <vector>
+
+std::vector<point2i> simplifyContour(const std::vector<point2i> &contour, size_t targetVertexSize);
+
+std::vector<std::vector<point2i>> splitContourByCorners(const std::vector<point2i> &contour, const std::vector<point2i> &corners);

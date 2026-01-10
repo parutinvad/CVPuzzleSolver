@@ -180,5 +180,9 @@ std::vector<point2i> extractContour(const image8u &objectContourMask) {
     // Deterministic start: rotate to min (y, x).
     rotateToMinYX(contour);
 
+    for (point2i p: contour) {
+        rassert(p.x >= 0 && p.x < w && p.y >= 0 && p.y < h, 2347823412);
+    }
+
     return contour;
 }
