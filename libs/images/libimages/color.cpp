@@ -81,6 +81,12 @@ const T& Color<T>::operator()(int c, std::source_location loc) const {
     return data_[static_cast<std::size_t>(c)];
 }
 
+template <typename T>
+bool Color<T>::operator==(const Color<T>& other) const noexcept {
+    if (c_ != other.c_) return false;
+    return data_ == other.data_;
+}
+
 // Explicit instantiations
 template class Color<std::uint8_t>;
 template class Color<float>;

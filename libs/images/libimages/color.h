@@ -27,6 +27,9 @@ public:
     T& operator()(int c, std::source_location loc = std::source_location::current());
     const T& operator()(int c, std::source_location loc = std::source_location::current()) const;
 
+    bool operator==(const Color& other) const noexcept;
+    bool operator!=(const Color& other) const noexcept { return !(*this == other); }
+
 private:
     int c_ = 0;
     std::vector<T> data_;
